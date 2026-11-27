@@ -81,5 +81,24 @@ footer{background:#020a17;color:#d8e6f7;padding:30px 7%;display:flex;align-items
 <section class="formsection" id="solicitud"><div class="section-head"><h2>Solicita tu diagnóstico</h2><p>Cuéntanos qué equipo tienes y qué problema presenta.</p></div><form class="formwrap" id="formulario"><label for="nombre">Nombre</label><input id="nombre" name="nombre" placeholder="Tu nombre" required><label for="equipo">Tipo de equipo</label><select id="equipo" required><option value="">Selecciona</option><option>Laptop</option><option>Computadora de escritorio</option><option>Otro</option></select><label for="problema">Descripción del problema</label><textarea id="problema" placeholder="Describe brevemente el problema..." required></textarea><button class="cta" type="submit">Enviar solicitud</button><p class="note">Demostración escolar: este formulario no envía ni almacena información; solo muestra un mensaje.</p></form></section>
 </main>
 <footer><div><h2>PC<span>CHECK</span> ✓</h2><p>Diagnóstico y mantenimiento de computadoras.</p></div><div><p>Proyecto escolar de emprendimiento tecnológico</p><p>© 2026 PCCheck</p></div></footer>
-<script>document.getElementById('formulario').addEventListener('submit',function(e){e.preventDefault();const nombre=document.getElementById('nombre').value.trim();alert('¡Gracias, '+nombre+'! Tu solicitud de demostración fue registrada.');this.reset();});</script>
+
+<script>
+document.getElementById('formulario').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const nombre = document.getElementById('nombre').value.trim();
+  const mensaje = document.getElementById('mensaje').value.trim();
+
+  const telefono = '525645344220';
+
+  const texto = `Hola, soy ${nombre}. Quiero solicitar información sobre un servicio de PCCheck. Mi solicitud es: ${mensaje}`;
+
+  const enlace = 'https://wa.me/' + telefono + '?text=' + encodeURIComponent(texto);
+
+  window.open(enlace, '_blank');
+
+  this.reset();
+});
+</script>
+
 </body></html>
