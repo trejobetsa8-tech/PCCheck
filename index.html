@@ -108,7 +108,7 @@ document.getElementById('formulario').addEventListener('submit', function(e) {
 
   const telefono = '525645344220';
 
-  const texto = `Hola, soy ${nombre}. Quiero solicitar información sobre un servicio de PCCheck. Mi solicitud es: ${mensaje}`;
+  const texto = `Hola, soy ${nombre}. Mi equipo es:${equipo}. Mi problema es: ${mensaje}`;
 
   const enlace = 'https://wa.me/' + telefono + '?text=' + encodeURIComponent(texto);
 
